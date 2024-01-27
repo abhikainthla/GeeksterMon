@@ -12,24 +12,124 @@ body {
     font-size: 18px;
     letter-spacing: -1px;
     font-weight: bold;
-    color: #666;
+    color: #fff;
 }
 
 .pokeCard {
     width: 240px;
     height: 300px;
-    background: white;
-    margin: 10px;
+    margin: 15px;
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 2px solid black;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    cursor: pointer;
+    transition: .5s ease-in-out;
+}
+
+.pokeCard:hover{
+    transform: rotateX(90);
+
 }
 
 #container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: .5em;
+    margin: 20px;
+    padding: 20px;
+}
+h1{
+    padding: 15px;
+}
+
+select {
+    /* Reset Select */
+    appearance: none;
+    outline: 10px red;
+    border: 0;
+    box-shadow: none;
+    /* Personalize */
+    flex: 1;
+    padding: 0 1em;
+    color: #fff;
+    background-color: #334254;
+    background-image: none;
+    cursor: pointer;
+  }
+
+  select::-ms-expand {
+    display: none;
+  }
+
+  .select {
+    position: relative;
+    display: flex;
+    width: 7em;
+    height: 3em;
+    border-radius: .25em;
+    overflow: hidden;
+  }
+
+  .select::after {
+    content: '\25BC';
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 1em;
+    background-color: #34495e;
+    transition: .25s all ease;
+    pointer-events: none;
+  }
+
+  .select:hover::after {
+    color: #f39c12;
+  }
+
+  .select-type {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5em;
+  }
+
+  #filter {
+    background-color: #34495e;
+    color: #fff;
+    padding: 14px;
+    
+    border-radius: .25em;
+
+  }
+
+  #reset {
+    background-color: #34495e;
+    color: #fff;
+    padding: 14px;
+    
+    border-radius: .25em;
+  }
+
+input {
+    height: 3em;
+    border:1px solid #34495e;
+}
+
+#btn {
+    background-color: #34495e;
+    color: #fff;
+    padding: 10px;
+    
+    border-radius: .25em;
 }
