@@ -11,8 +11,10 @@ body {
     text-align: center;
     font-size: 18px;
     letter-spacing: -1px;
-    font-weight: bold;
+    font-weight: 900;
     color: #fff;
+    text-transform: capitalize;
+
 }
 
 .pokeCard {
@@ -31,9 +33,9 @@ body {
 }
 
 .pokeCard:hover{
-    transform: rotateX(90);
-
+  transform: scale(1.05);
 }
+
 
 #container {
     display: flex;
@@ -52,6 +54,7 @@ main {
 }
 h1{
     padding: 15px;
+    font-size: 3rem;
 }
 
 select {
@@ -130,6 +133,86 @@ input {
     background-color: #34495e;
     color: #fff;
     padding: 10px;
-    
     border-radius: .25em;
+}
+
+.pokeType {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.abilitySpan {
+  color: #fff;
+  font-size: 18px;
+  padding: 5px;
+  margin-top: 10px;
+  background-color: #34495e;
+  border-radius: 3px;
+}
+.pokeAbility {
+  color: #fff;
+  text-align: center;
+}
+
+
+#loader{
+   position: absolute;
+   top: 40%;
+   left: 45%;
+}
+.pl {
+	display: block;
+	width: 6.25em;
+	height: 6.25em;
+}
+.pl__ring, .pl__ball {
+	animation: ring 2s ease-out infinite;
+}
+.pl__ball {
+	animation-name: ball;
+}
+
+/* Dark theme  */
+@media (prefers-color-scheme: dark) {
+	:root {
+		--bg: hsl(var(--hue),10%,10%);
+		--fg: hsl(var(--hue),10%,90%);
+	}
+}
+
+/* Animation */
+@keyframes ring {
+	from {
+		stroke-dasharray: 0 257 0 0 1 0 0 258;
+	}
+	25% {
+		stroke-dasharray: 0 0 0 0 257 0 258 0;
+	}
+	50%, to {
+		stroke-dasharray: 0 0 0 0 0 515 0 0;
+	}
+}
+@keyframes ball {
+	from, 50% {
+		animation-timing-function: ease-in;
+		stroke-dashoffset: 1;
+	}
+	64% {
+		animation-timing-function: ease-in;
+		stroke-dashoffset: -109;
+	}
+	78% {
+		animation-timing-function: ease-in;
+		stroke-dashoffset: -145;
+	}
+	92% {
+		animation-timing-function: ease-in;
+		stroke-dashoffset: -157;
+	}
+	57%, 71%, 85%, 99%, to {
+		animation-timing-function: ease-out;
+		stroke-dashoffset: -163;
+	}
 }
